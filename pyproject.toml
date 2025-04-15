@@ -1,0 +1,23 @@
+[project]
+name = "NeXov"
+version = "1.0"
+description = "NeXov Enables eXtensible Observation of Vertices"
+authors = [
+    { name = "Kurimochi", email="kurimochi.sec@gmail.com" },
+]
+readme = "README.md"
+license = {file = "LICENSE"}
+requires-python = ">=3.10"
+dependencies = ["networkx", "mecab-python3", "matplotlib", "graphviz"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[project.scripts]
+nexov = "NeXov.cli:main"
+
+[project.urls]
+"Homepage" = "https://github.com/kurimochi/NeXov"
+"Bug Tracker" = "https://github.com/kurimochi/NeXov/issues"

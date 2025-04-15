@@ -1,0 +1,129 @@
+{
+  "directed": true,
+  "multigraph": false,
+  "graph": {},
+  "nodes": [
+    {
+      "id": "ぐっも"
+    },
+    {
+      "id": "ー"
+    },
+    {
+      "id": "に"
+    },
+    {
+      "id": "！"
+    },
+    {
+      "id": "ん"
+    },
+    {
+      "id": "も"
+    },
+    {
+      "id": "お"
+    },
+    {
+      "id": "おはよう"
+    },
+    {
+      "id": "は"
+    },
+    {
+      "id": "です"
+    }
+  ],
+  "edges": [
+    {
+      "weight": 1.0,
+      "source": "ぐっも",
+      "target": "ー"
+    },
+    {
+      "weight": 0.5,
+      "source": "ー",
+      "target": "に"
+    },
+    {
+      "weight": 0.5,
+      "source": "ー",
+      "target": "！"
+    },
+    {
+      "weight": 0.3333333333333333,
+      "source": "に",
+      "target": "ん"
+    },
+    {
+      "weight": 0.3333333333333333,
+      "source": "に",
+      "target": "も"
+    },
+    {
+      "weight": 0.3333333333333333,
+      "source": "に",
+      "target": "！"
+    },
+    {
+      "weight": 0.1875,
+      "source": "！",
+      "target": "も"
+    },
+    {
+      "weight": 0.625,
+      "source": "！",
+      "target": "！"
+    },
+    {
+      "weight": 0.125,
+      "source": "！",
+      "target": "お"
+    },
+    {
+      "weight": 0.0625,
+      "source": "！",
+      "target": "おはよう"
+    },
+    {
+      "weight": 1.0,
+      "source": "ん",
+      "target": "！"
+    },
+    {
+      "weight": 0.8,
+      "source": "も",
+      "target": "に"
+    },
+    {
+      "weight": 0.2,
+      "source": "も",
+      "target": "ー"
+    },
+    {
+      "weight": 1.0,
+      "source": "お",
+      "target": "は"
+    },
+    {
+      "weight": 1.0,
+      "source": "おはよう",
+      "target": "です"
+    },
+    {
+      "weight": 1.0,
+      "source": "は",
+      "target": "です"
+    },
+    {
+      "weight": 0.6666666666666666,
+      "source": "です",
+      "target": "ー"
+    },
+    {
+      "weight": 0.3333333333333333,
+      "source": "です",
+      "target": "！"
+    }
+  ]
+}

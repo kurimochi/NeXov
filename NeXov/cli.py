@@ -1,8 +1,8 @@
-from NeXov.core import MarkovModel
-from NeXov.tokenizer import mecab_split, char_split
 import argparse
 import sys
 import os
+from NeXov.core import MarkovModel
+from NeXov.tokenizer import mecab_split, char_split
 
 
 def run_tokenize(args):
@@ -60,8 +60,11 @@ def run_generate(args):
         print("[-] Specify the start token (--start).", file=sys.stderr)
         sys.exit(1)
 
-    output = model.generate(start=args.start, max_len=args.length)
-    print(output)
+    model.result.append(args.start)
+    current = args.start
+    while len(model.result) < args.length:
+        current = model.generate(current)
+    print(''.join(model.result))
 
 
 def run_visualize(args):
@@ -79,6 +82,7 @@ def run_visualize(args):
         sys.exit(1)
 
     model.visualize(args.output, args.font)
+
 
 def main():
     parser = argparse.ArgumentParser(prog="nexov", description="NeXov Enables eXtensible Observation of Vertices")

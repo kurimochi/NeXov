@@ -1,14 +1,16 @@
-from collections import defaultdict, Counter
-from graphviz import Digraph
-import matplotlib.pyplot as plt
-import networkx as nx
 import random
 import pickle
 import json
+import matplotlib.pyplot as plt
+import networkx as nx
+from collections import defaultdict, Counter
+from graphviz import Digraph
+
 
 class MarkovModel:
     def __init__(self):
         self.graph = nx.DiGraph()
+        self.result = []
 
     def build(self, tokens):
         transitions = defaultdict(Counter)
@@ -20,19 +22,14 @@ class MarkovModel:
             for next_state, count in counter.items():
                 self.graph.add_edge(state, next_state, weight=count / total)
 
-    def generate(self, start, max_len):
-        if start is None:
-            raise ValueError("Start token must be provided.")
-        result = [start]
-        current = start
-        for _ in range(max_len):
-            neighbors = list(self.graph.successors(current))
-            if not neighbors:
-                break
-            weights = [self.graph[current][n]['weight'] for n in neighbors]
-            current = random.choices(neighbors, weights=weights)[0]
-            result.append(current)
-        return ''.join(result)
+    def generate(self, current):
+        neighbors = list(self.graph.successors(current))
+        if not neighbors:
+            return
+        weights = [self.graph[current][n]['weight'] for n in neighbors]
+        current = random.choices(neighbors, weights=weights)[0]
+        self.result.append(current)
+        return current
 
     def visualize(self, output_file: str, font):
         dot = Digraph(format="png")

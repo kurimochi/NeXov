@@ -4,33 +4,29 @@
 NeXovは、非常に高密度のマルコフ連鎖モデルの構築や生成、可視化、またそれをサポートするデータ処理をNetworkXで実現するツールです。
 
 ## Install
-いくつか前提ソフトがあるので先にインストールします。
-### MeCab
-形態素解析を行う`MeCab`はNeXovのデータ前処理に使われています。`MeCab`をインストールするには、以下のサイトからインストーラーをダウンロードし、インストーラーの指示に従います。
+OSごとに一部操作が異なります。
+### Windows
+以下のサイトにあるインストーラーを実行します。
 
-https://github.com/ikegami-yukino/mecab/releases
+https://github.com/ikegami-yukino/mecab/releases/tag/v0.996.2  (MeCab)  
+https://graphviz.org/download/#windows  (Graphviz)
 
-Debian系ディストリは以下のコマンドを実行します。
+### Linux
+以下のコマンドを実行します。
 ```shell
-$ sudo apt install mecab libmecab-dev mecab-ipadic-utf8
+$ sudo apt update
+$ sudo apt install -y mecab libmecab-dev mecab-ipadic-utf8 graphviz
+$ sudo cp /etc/mecabrc /usr/local/etc/mecabrc
 ```
-### NEologd
-`NEologd`は、`MeCab`を固有名詞に強くするためのシステム辞書です。  
-Windowsであれば、以下のサイトを参考にインストールしてください。
 
-https://qiita.com/xi_guisheng/items/40ee7da516de05e5894f
+### NEologd (推奨)
+`MeCab`に固有名詞などを認識させるためのユーザー辞書です。これを使うだけでも精度はかなり上がるのでインストールをお勧めします。
 
-また、Debian系ディストリであれば以下のサイトが参考になります。
+Windows: https://qiita.com/xi_guisheng/items/40ee7da516de05e5894f  
+Linux: https://blog.forestberrypi.com/tools-services/linux/mecab-in-ubuntu/#toc7
 
-https://blog.forestberrypi.com/tools-services/linux/mecab-in-ubuntu/#toc7
-
-### Graphviz
-`Graphviz`は、グラフの可視化を行うライブラリです。以下のサイトを参考にインストールしてください。
-
-https://graphviz.org/download/
-
-### Install
-NeXovをインストールするには、以下のコマンドを実行します。
+### NeXovのインストール (共通)
+`pip`でNeXovをインストールできます。
 ```shell
 $ pip install nexov
 ```
@@ -160,7 +156,7 @@ NeXovはMITライセンスで配布されています。
 ただし、以下の外部ソフト・ライブラリを利用しています。これらはNeXovに含まれていませんが、別途インストールが必要です。
 
 - MeCab (形態素解析器) : BSD License
-- mecab-ipadic-NEologd (日本語辞書) : Apache License 2.0
+- NEologd (日本語辞書) : Apache License 2.0
 - Graphviz (グラフ描画ツール) : Eclipse Public License 1.0
 - mecab-python3 (Pythonバインディング) : MIT License
 - networkx : BSD License

@@ -1,6 +1,6 @@
 [project]
 name = "NeXov"
-version = "1.0"
+version = "1.1"
 description = "NeXov Enables eXtensible Observation of Vertices"
 authors = [
     { name = "Kurimochi", email="kurimochi.sec@gmail.com" },

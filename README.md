@@ -104,11 +104,11 @@ options:
   -s START, --start START
                         開始トークン
   -l LENGTH, --length LENGTH
-                        生成するトークン数
+                        最大生成トークン長 (デフォルト値は500)
   -e EXPORT, --export EXPORT
                         生成後のモデルをファイルにエクスポート
   -v VISUALIZE, --visualize VISUALIZE
-                        生成と同時に可視化を実行(拡張子を除く出力ファイル名を指定)
+                        生成と同時に可視化を実行(拡張子を除く出力ファイルパスを指定)
 ```
 #### 例
 ```shell

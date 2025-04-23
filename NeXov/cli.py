@@ -99,9 +99,9 @@ def main():
     generate_parser = subparsers.add_parser("generate", help="モデルまたはテキストを生成")
     generate_parser.add_argument('-i', '--input', required=True, help='モデルまたはトークン済みデータファイル')
     generate_parser.add_argument('-s', '--start', help='開始トークン')
-    generate_parser.add_argument('-l', '--length', type=int, default=1000, help='生成するトークン数')
+    generate_parser.add_argument('-l', '--length', type=int, default=500, help='最大生成トークン長 (デフォルト値は500)')
     generate_parser.add_argument('-e', '--export', help='生成後のモデルをファイルにエクスポート')
-    generate_parser.add_argument('-v', '--visualize', help='生成と同時に可視化を実行(拡張子を除く出力ファイル名を指定)')
+    generate_parser.add_argument('-v', '--visualize', help='生成と同時に可視化を実行(拡張子を除く出力ファイルパスを指定)')
     generate_parser.set_defaults(func=run_generate)
 
     # Sub command: visualize

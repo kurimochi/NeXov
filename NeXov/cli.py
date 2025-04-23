@@ -62,7 +62,7 @@ def run_generate(args):
 
     model.result.append(args.start)
     current = args.start
-    while len(model.result) < args.length:
+    while len(model.result) < args.length and current != None:
         current = model.generate(current)
     print(''.join(model.result))
 

@@ -150,6 +150,11 @@ $ nexov visualize -i model.json -o output
 ```
 ![output.png](tests/output.png)
 
+## Use in external code
+外部コード内で`NeXov.core`の`generate`メソッドを使用する際は、`The node None is not in the digraph.`エラーが発生するおそれがありますので、  
+**必ず`current != None`という条件分岐を含めてください。**  
+(`NeXov/cli.py`の65行目あたりを参考にするとわかりやすいと思います)
+
 ## LICENSE
 NeXovはMITライセンスで配布されています。
 
